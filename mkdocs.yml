@@ -1,0 +1,80 @@
+site_name: "Apunts de Markdown amb Material"
+site_url: "https://gisselagm.github.io/tarea4/"
+
+repo_url: "https://github.com/gisselagm/tarea4"
+repo_name: "GitHub"
+
+theme:
+  name: material
+  language: es
+
+  # Panells de navegació (tabs/seccions)
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    # Botó de còpia en els blocs de codi
+    - content.code.copy
+
+  # Possibilitat de canviar entre tema clar i fosc
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: "Canvia a mode fosc"
+    - scheme: slate
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: "Canvia a mode clar"
+
+plugins:
+  # Búsqueda de recursos
+  - search:
+      lang: es
+
+  # Botó per baixar el PDF amb page-to-pdf
+  - page-to-pdf:
+       disable: true
+       disableOnServe: true
+
+markdown_extensions:
+  # Admonitions normals
+  - admonition
+  # Admonitions plegables (detalls)
+  - pymdownx.details
+
+  # Formatació de codi amb línies numerades
+  - pymdownx.highlight:
+      linenums: true
+      anchor_linenums: true
+
+  # Suport per a diagrames Mermaid
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Taula de continguts amb enllaç
+  - toc:
+      permalink: true
+
+  # Atributs extra en Markdown (per classes, etc.)
+  - attr_list
+
+# Fulls d’estil extra si els necessites
+extra_css:
+  - stylesheets/extra.css
+
+# Estructura dels apunts (exemple basat en els documents de la unitat)
+nav:
+  - Inici: index.md
+  - Apunts:
+      - "1. Presentació": presentacio.md
+      - "2. Introducció": introduccio.md
+      - "3. XML": xml.md
+      - "4. CSS": css.md
